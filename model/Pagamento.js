@@ -2,6 +2,9 @@ export class Pagamento {
     #valor;
 
     constructor(valor){
+        if(new.target === Pagamento) {
+            throw new Error ("Não pode criar objeto abstrato");            
+        }
         this.#valor = valor
     }
 
